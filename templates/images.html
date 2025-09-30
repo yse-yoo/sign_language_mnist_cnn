@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MNIST Image Predictions</title>
+    <style>
+        body { font-family: Arial; }
+        .grid { display: flex; flex-wrap: wrap; gap: 10px; }
+        .item { width: 120px; text-align: center; }
+        img { max-width: 100px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>MNIST Image Predictions</h1>
+    <div class="grid">
+        {% for r in results %}
+        <div class="item">
+            <img src="{{ url_for('mnist_images', path=r.file) }}" alt="{{ r.file }}">
+            <p>{{ r.file }}</p>
+            <p><b>Pred: {{ r.pred }}</b></p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

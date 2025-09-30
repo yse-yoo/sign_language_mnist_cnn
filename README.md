@@ -17,3 +17,8 @@ pip install -r requirements.txt
 python train.py
 ```
 
+## FastAPI
+
+```bash
+uvicorn app:app --reload
+```
